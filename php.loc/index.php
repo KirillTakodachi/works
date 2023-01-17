@@ -12,7 +12,7 @@
 			$b=16;
 			$c=7;
 			$d=($b**2 - 4 * $a * $c);
-			if($d == 0){
+			if($d = 0){
 				$x=-($b / 2 * $a);
 				echo "Дискрименант равен: ".$x ;
 			}elseif($d > 0){
@@ -23,71 +23,63 @@
 				echo "Нет действительных корней." ;
 			};
 		?>
-		
-	</p>
-	<ol>
-
-
-
-<?php
+		<?php
 			$stud = [
 				[
 					"fio" => "Анатолий Петрович Сечь",
 					"old" => "34",
 					"namber" => "8-967-456-43-54",
-					"active" => false,
+					"ratebase" => "Базирован",
 				],
 				[
 					"fio" => "Виталий Витальевич Цаль",
 					"old" => "33",
 					"namber" => "8-210-036-74-42",
-					"active" => true,
+					"ratebad" => "Прогульщик",
 				],
 				[
 					"fio" => "Петров Милязеевич Сан",
 					"old" => "26",
 					"namber" => "8-347-233-42-64",
-					"active" => false,
+					"ratebase" => "Базирован",
 				],
 				[
 					"fio" => "Николай Мерязеевич Кенронов",
 					"old" => "21",
 					"namber" => "8-967-456-43-54",
-					"active" => true,
+					"ratebad" => "Прогульщик",
 				],
 				[
 					"fio" => "Виктор Русичев Корнеплод",
 					"old" => "59",
 					"namber" => "8-967-456-43-54",
-					"active" => false,
+					"ratebase" => "Базирован",
 				],
 
 			];
 		?>
+	</p>
+	<ol>
 
 		<?php
 			foreach ($stud as $data => $value) {
-		?>
-
-
-				<?php if ($value["active"]) {
-					$stud_pas = "noБазирован";
-					$status_stud = "base";
-				}else{
-					
-					$stud_pas = "Базирован";
-					$status_stud = "nobase";
+				echo "<li>".$stud[$data]['fio']."</li>";
+				foreach ($stud[$data] as $info => $value) {
+					if ($value == $stud[$data]['fio']) {
+						//null
+					}elseif($value == $stud[$data]['ratebad']){
+						echo "<ol class='nobase'>".$value."</ol>";
+					}elseif($value == $stud[$data]['ratebase']){
+						echo "<ol class='base'>".$value."</ol>";
+					}else{
+						echo "<ol>".$value."</ol>";
+					}
 				}
-				;?>
-
-
-				
-				<li class="<?php echo $status_stud; ?>"><?php echo $value["fio"]." ".$value["old"]." ".$value["namber"]." ".$stud_pas; ?></li>
-
-		<?php } ; ?> 
-
+			};
+		?>
 	</ol>
-				<style type="text/css">
+			
+	<style type="text/css">
 		*{
 			font-size: 14px;
 		}
@@ -101,19 +93,5 @@
 			color: red;
 		}
 	</style>
-			<!-- foreach ($stud as $data => $value) {
-			 	echo "<li>".$stud[$data]['fio']."</li>";
-			 	foreach ($stud[$data] as $info => $value) {
-			 		if ($value == $stud[$data]['fio']) {
-			 			//null
-			 		}elseif($value == $stud[$data]['ratebad']){
-			 			echo "<ol class='nobase'>".$value."</ol>";
-			 		}elseif($value == $stud[$data]['ratebase']){
-			 			echo "<ol class='base'>".$value."</ol>";
-			 		}else{
-			 			echo "<ol>".$value."</ol>";
-			 		}
-			 	}
-			 }; -->
 </body>
 </html>
