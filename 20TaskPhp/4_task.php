@@ -37,8 +37,7 @@
                                 <p>Сформируйте массив данных и выведите полностью альбом.</p>
                             </div> -->
                             <?php $img = [
-                                [
-                                    "img/demo/gallery/thumb/21.jpg" ,
+                                    "img/demo/gallery/thumb/21.jpg",
                                     "img/demo/gallery/thumb/22.jpg" ,
                                     "img/demo/gallery/thumb/23.jpg" ,
                                     "img/demo/gallery/thumb/24.jpg" ,
@@ -46,15 +45,14 @@
                                     "img/demo/gallery/thumb/25.jpg" ,
                                     "img/demo/gallery/thumb/26.jpg" ,
                                     "img/demo/gallery/21.jpg",
-                                ]
                             ]?>
                             
                             <div id="js-lightgallery">
                                 <?php foreach ($img as $data => $value) { ?>
-                                    <a class="" href="<?php echo $data[$value] ; ?>">
-                                        <img class="img-responsive" src="<?php echo $data[$value] ; ?>" alt ="image">
+                                    <a class="" href="<?php echo $value ; ?>">
+                                        <img class="img-responsive" src="<?php echo $value ; ?>" alt ="image">
                                     </a>
-                                <?php echo $data;  } ?>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
