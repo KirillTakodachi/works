@@ -36,17 +36,101 @@
                 </div>
             </div>
             <div class="row js-list-filter" id="js-contacts">
-
+                <?php 
+                    $card = [
+                        [
+                            "name" => "Oliver Kopyov",
+                            "data_filter" => "oliver kopyov",
+                            "img" => "avatar-b.png",
+                            "work_prov" => "IT Director, Gotbootstrap Inc.",
+                            "data_target" => "c_1",
+                            "mobel_number" => "+1 317-456-2564",
+                            "mail" => "oliver.kopyov@smartadminwebapp.com",
+                            "addres" => "15 Charist St, Detroit, MI, 48212, USA",
+                        ],
+                        [
+                            "name" => "Sesha Gray",
+                            "data_filter" => "sesha gray",
+                            "img" => "avatar-c.png",
+                            "work_prov" => "Project Manager, Gotbootstrap Inc.",
+                            "data_target" => "c_2",
+                            "mobel_number" => "+1 313-461-1347",
+                            "mail" => "sesha.gray@smartadminwebapp.com",
+                            "addres" => "134 Hamtrammac, Detroit, MI, 48314, USA",
+                        ],
+                        [
+                            "name" => "Dr. John Cook PhD",
+                            "data_filter" => "dr john cook",
+                            "img" => "avatar-e.png",
+                            "work_prov" => "Human Resources, Gotbootstrap Inc.",
+                            "data_target" => "c_3",
+                            "mobel_number" => "+1 313-779-1347",
+                            "mail" => "john.cook@smartadminwebapp.com",
+                            "addres" => "55 Smyth Rd, Detroit, MI, 48341, USA",
+                        ],
+                        [
+                            "name" => "Jim Ketty",
+                            "data_filter" => "jim ketty",
+                            "img" => "avatar-k.png",
+                            "work_prov" => "Staff Orgnizer, Gotbootstrap Inc.",
+                            "data_target" => "c_4",
+                            "mobel_number" => "+1 313-779-3314",
+                            "mail" => "jim.ketty@smartadminwebapp.com",
+                            "addres" => "134 Tasy Rd, Detroit, MI, 48212, USA",
+                        ],
+                        [
+                            "name" => "Dr. John Oliver",
+                            "data_filter" => "aaron tellus",
+                            "img" => "avatar-g.png",
+                            "work_prov" => "Oncologist, Gotbootstrap Inc.",
+                            "data_target" => "c_5",
+                            "mobel_number" => "+1 313-779-8134",
+                            "mail" => "john.oliver@smartadminwebapp.com",
+                            "addres" => "134 Gallery St, Detroit, MI, 46214, USA",
+                        ],
+                        [
+                            "name" => "Sarah McBrook",
+                            "data_filter" => "sarah mcbrook",
+                            "img" => "avatar-h.png",
+                            "work_prov" => "Xray Division, Gotbootstrap Inc.",
+                            "data_target" => "c_6",
+                            "mobel_number" => "+1 313-779-7613",
+                            "mail" => "sarah.mcbrook@smartadminwebapp.com",
+                            "addres" => "13 Jamie Rd, Detroit, MI, 48313, USA",
+                        ],
+                        [
+                            "name" => "Jimmy Fellan",
+                            "data_filter" => "jimmy fellan",
+                            "img" => "avatar-i.png",
+                            "work_prov" => "Accounting, Gotbootstrap Inc.",
+                            "data_target" => "c_7",
+                            "mobel_number" => "+1 313-779-4314",
+                            "mail" => "jimmy.fallan@smartadminwebapp.com",
+                            "addres" => "55 Smyth Rd, Detroit, MI, 48341, USA",
+                        ],
+                        [
+                            "name" => "Arica Grace",
+                            "data_filter" => "arica grace",
+                            "img" => "avatar-j.png",
+                            "work_prov" => "Accounting, Gotbootstrap Inc.",
+                            "data_target" => "c_8",
+                            "mobel_number" => "+1 313-779-3347",
+                            "mail" => "arica.grace@smartadminwebapp.com",
+                            "addres" => "798 Smyth Rd, Detroit, MI, 48341, USA",
+                        ],
+                    ];
+                ?>
+                <?php foreach ($card as $data => $value) { ?>
                 <div class="col-xl-4">
-                    <div id="c_1" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="oliver kopyov">
+                    <div id="<?php echo $value["data_target"] ; ?>" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?php echo $value["data_filter"] ; ?>">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
                                 <span class="status status-success mr-3">
-                                    <span class="rounded-circle profile-image d-block " style="background-image:url('img/demo/avatars/avatar-b.png'); background-size: cover;"></span>
+                                    <span class="rounded-circle profile-image d-block " style="background-image:url('img/demo/avatars/<?php echo $value["img"]; ?>'); background-size: cover;"></span>
                                 </span>
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
-                                        Oliver Kopyov
+                                        <?php echo $value["name"] ; ?>
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                                     </a>
                                     <div class="dropdown-menu">
@@ -54,9 +138,9 @@
                                         <a class="dropdown-item" href="#">Create Appointment</a>
                                         <a class="dropdown-item" href="#">Block User</a>
                                     </div>
-                                    <span class="text-truncate text-truncate-xl">IT Director, Gotbootstrap Inc.</span>
+                                    <span class="text-truncate text-truncate-xl"><?php echo $value["work_prov"] ; ?></span>
                                 </div>
-                                <button class="js-expand-btn btn btn-sm btn-default d-none waves-effect waves-themed" data-toggle="collapse" data-target="#c_1 > .card-body + .card-body" aria-expanded="false">
+                                <button class="js-expand-btn btn btn-sm btn-default d-none waves-effect waves-themed" data-toggle="collapse" data-target="#<?php echo $value["data_target"] ; ?> > .card-body + .card-body" aria-expanded="false">
                                     <span class="collapsed-hidden">+</span>
                                     <span class="collapsed-reveal">-</span>
                                 </button>
@@ -64,12 +148,12 @@
                         </div>
                         <div class="card-body p-0 collapse show">
                             <div class="p-3">
-                                <a href="tel:+13174562564" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> +1 317-456-2564</a>
-                                <a href="mailto:oliver.kopyov@smartadminwebapp.com" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mouse-pointer text-muted mr-2"></i> oliver.kopyov@smartadminwebapp.com</a>
+                                <a href="tel:<?php echo $value["mobel_number"] ; ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
+                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> <?php echo $value["mobel_number"] ; ?></a>
+                                <a href="mailto:<?php echo $value["mail"] ; ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
+                                    <i class="fas fa-mouse-pointer text-muted mr-2"></i> <?php echo $value["mail"] ; ?></a>
                                 <address class="fs-sm fw-400 mt-4 text-muted">
-                                    <i class="fas fa-map-pin mr-2"></i> 15 Charist St, Detroit, MI, 48212, USA</address>
+                                    <i class="fas fa-map-pin mr-2"></i> <?php echo $value["addres"] ; ?></address>
                                 <div class="d-flex flex-row">
                                     <a href="javascript:void(0);" class="mr-2 fs-xxl" style="color:#3b5998">
                                         <i class="fab fa-facebook-square"></i>
@@ -85,10 +169,8 @@
                         </div>
                     </div>
                 </div>
-
-
-
-                <div class="col-xl-4">
+                <?php } ?>
+<!--                 <div class="col-xl-4">
                     <div id="c_2" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="sesha gray">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
@@ -136,8 +218,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="col-xl-4">
                     <div id="c_3" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="dr john cook">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
@@ -425,7 +505,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </main>
         
