@@ -26,7 +26,7 @@
 							<td><?php echo $value['id']; ?></td>
 							<td><?php echo $value['name']; ?></td>
 							<td><?php echo $value['surname']; ?></td>
-							<td><?php echo $value['mail']; ?></td>
+							<td><?php echo $value['email']; ?></td>
 							<td><a class="btn__show" href="show.php?id=<?php echo $value['id'] ?>">Show</a></td>
 							<td><a class="btn__edit" href="edit.php?id=<?php echo $value['id'] ?>">Edit</a></td>
 							<td><a class="btn__delete" href="delete.php?id=<?php echo $value['id'] ?>">Delete</a></td>
