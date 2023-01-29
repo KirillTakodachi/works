@@ -34,6 +34,7 @@
 					</thbody>
 
 					<?php
+					echo $sus;
 						}
 					?>
 				</table>

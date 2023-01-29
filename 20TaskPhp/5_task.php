@@ -68,7 +68,11 @@
                                     "status" => "Partner &amp; Contributor",
                                 ],
                             ]; ?>
+<<<<<<< HEAD
                             
+=======
+
+>>>>>>> 8ed6de9 (доделать задания до 13)
                                 <?php foreach ($human as $data => $value) { ?>
                                     <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                         <img src="img/demo/authors/<?php echo $value["preveu"];?>" alt="<?php echo $value["alt_name"];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
@@ -90,7 +94,11 @@
                 </div>
             </div>
         </main>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 8ed6de9 (доделать задания до 13)
 
         <script src="js/vendors.bundle.js"></script>
         <script src="js/app.bundle.js"></script>

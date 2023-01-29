@@ -37,7 +37,11 @@
                                 <p>Сформируйте массив данных и выведите полностью альбом.</p>
                             </div> -->
                             <?php $img = [
+<<<<<<< HEAD
                                     "img/demo/gallery/thumb/21.jpg",
+=======
+                                    "img/demo/gallery/thumb/21.jpg" ,
+>>>>>>> 8ed6de9 (доделать задания до 13)
                                     "img/demo/gallery/thumb/22.jpg" ,
                                     "img/demo/gallery/thumb/23.jpg" ,
                                     "img/demo/gallery/thumb/24.jpg" ,
