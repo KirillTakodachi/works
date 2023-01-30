@@ -20,7 +20,6 @@
 					<?php
 						foreach ($users as $user => $value) {
 					?>
-					
 					<thbody class="thbody">
 						<tr>
 							<td><?php echo $value['id']; ?></td>
