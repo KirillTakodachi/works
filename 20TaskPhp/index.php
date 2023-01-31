@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 <head>
         <meta charset="utf-8">
@@ -47,30 +48,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php 
-                                            $pdo = new PDO ('mysql:host=localhost;dbname=contact;','root','');
-                                            $statement = $pdo->prepare('SELECT * FROM twiters');
-                                            $statement->execute();
-                                            $users = $statement->fetchALL(PDO::FETCH_ASSOC);
-                                        ?>
-                                        
-                                        <?php foreach ($users as $key => $value) { ?>
-                                           <tr>
-                                                <th scope="row"><?php echo $value['id']; ?></th>
-                                                <td><?php $value['name'] ?></td>
-                                                <td><?php echo $value['last name']; ?></td>
-                                                <td><?php echo $value['username'] ?></td>
-                                                <td>
-                                                    <a href="show.php?id=<?php echo $value['id']; ?>" class="btn btn-info">Показать</a>
-                                                    <a href="edit.php?id=<?php echo $value['id']; ?>" class="btn btn-warning">Изменить</a>
-                                                    <a href="delete.php?id=<?php echo $value['id']; ?>" class="btn btn-danger">Удалить</a>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
-                                        
-
-
-<!--                                         <tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>
+                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
+                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
+                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <th scope="row">2</th>
                                             <td>Jacob</td>
                                             <td>Thornton</td>
@@ -102,7 +91,7 @@
                                                 <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
                                                 <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
                                             </td>
-                                        </tr> -->
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
