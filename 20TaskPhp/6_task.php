@@ -32,10 +32,7 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-<<<<<<< HEAD
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-=======
->>>>>>> 8ed6de9 (доделать задания до 13)
                             <?php $human = [
                                 [
                                     "preveu" => "sunny.png",
@@ -44,10 +41,9 @@
                                     "cont_name" => "Sunny",
                                     "link" => "myplaneticket",
                                     "status" => "Lead Author",
-<<<<<<< HEAD
-=======
+
+
                                     "online" => NULL,
->>>>>>> 8ed6de9 (доделать задания до 13)
                                 ],
                                 [
                                     "preveu" => "josh.png",
@@ -56,10 +52,9 @@
                                     "cont_name" => "Jos",
                                     "link" => "atlantez",
                                     "status" => "Partner &amp; Contributor",
-<<<<<<< HEAD
-=======
+
+
                                     "online" => NULL,
->>>>>>> 8ed6de9 (доделать задания до 13)
                                 ],
                                 [
                                     "preveu" => "jovanni.png",
@@ -68,10 +63,7 @@
                                     "cont_name" => "Jovanni",
                                     "status" => "Partner &amp; Contributor",
                                     "link" => "lodev09",
-<<<<<<< HEAD
-=======
                                     "online" => "banned",
->>>>>>> 8ed6de9 (доделать задания до 13)
                                 ],
                                 [
                                     "preveu" => "roberto.png",
@@ -80,39 +72,6 @@
                                     "cont_name" => "Roberto",
                                     "link" => "sildur",
                                     "status" => "Partner &amp; Contributor",
-<<<<<<< HEAD
-                                ],
-                            ]; ?>
-                            <?php foreach ($human as $data => $value) { ?>
-                                    <div class="<?php if ($value["cont_name"] == "Jovanni" || "Roberto") {echo "banned";}?>rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                        <img src="img/demo/authors/<?php echo $value["preveu"];?>" alt="<?php echo $value["alt_name"];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                        <div class="ml-2 mr-3">
-                                            <h5 class="m-0">
-                                                <?php echo $value["name"]?>
-                                                <small class="m-0 fw-300">
-                                                    <?php echo $value["skill"] ?>
-                                                </small>
-                                            </h5>
-                                            <a href="https://twitter.com/@<?php echo $value["link"] ?>" class="text-info fs-sm" target="_blank">@<?php echo $value["link"] ?></a> -
-                                            <a href="https://wrapbootstrap.com/user/<?php echo $value["link"] ?>" class=" text-info fs-sm" target="_blank" title="Contact <?php echo $value["cont_name"] ?>"><i class="fal fa-envelope"></i></a>
-                                        </div>
-                                    </div>
-                                <?php }; ?>
-                                <!-- <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                    <img src="img/demo/authors/roberto.png" alt="Jovanni Lo" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                    <div class="ml-2 mr-3">
-                                        <h5 class="m-0">
-                                            Roberto R. (Rails Developer)
-                                            <small class="m-0 fw-300">
-                                                Partner &amp; Contributor
-                                            </small>
-                                        </h5>
-                                        <a href="https://twitter.com/@sildur" class="text-info fs-sm" target="_blank">@sildur</a> -
-                                        <a href="https://wrapbootstrap.com/user/sildur" class="text-info fs-sm" target="_blank" title="Contact Roberto"><i class="fal fa-envelope"></i></a>
-                                    </div>
-                                </div> -->
-                            </div>
-=======
                                     "online" => "banned",
                                 ],
                             ]; ?>
@@ -134,18 +93,11 @@
                                     </div>
                                 </div>
                             <?php } ?>
->>>>>>> 8ed6de9 (доделать задания до 13)
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 8ed6de9 (доделать задания до 13)
-
         <script src="js/vendors.bundle.js"></script>
         <script src="js/app.bundle.js"></script>
         <script>

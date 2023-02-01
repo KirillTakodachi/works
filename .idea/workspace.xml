@@ -29,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/OSPanel/domains/KMworks.loc/20TaskPhp/9_task/9_task.php",
+    "last_opened_file_path": "C:/OSPanel/domains/KMworks.loc/20TaskPhp/11_task",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -37,8 +37,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\KMworks.loc\20TaskPhp\11_task" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/20TaskPhp/9_task/9_task.php">
+    <configuration name="Works" type="JavascriptDebugType" uri="http://kmworks.loc">
       <method v="2" />
     </configuration>
   </component>
@@ -51,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675172604106</updated>
       <workItem from="1675172605334" duration="426000" />
-      <workItem from="1675249741983" duration="514000" />
+      <workItem from="1675249741983" duration="8686000" />
     </task>
     <servers />
   </component>
