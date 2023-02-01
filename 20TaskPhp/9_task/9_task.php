@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php 
+    $pdo = new PDO("mysql:host=localhost;dbname=my_table;","root","");//Подключеие к БД
+    $statement = $pdo->prepare("SELECT * FROM data_base");//Изьятие данных из БД
+    $statement->execute();//Получение данных
+    $users = $statement->fetchALL(PDO::FETCH_ASSOC);//Пресваивание даных в одну переменную
+   // /20TaskPhp/9_task/  Путь к файлу 9_task
+?>
 <html lang="en">
 <head>
         <meta charset="utf-8">
@@ -48,7 +54,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <?php foreach ($users as $data => $value) { ?>
+                                            <tr>
+                                            <th scope="row"><?php echo $value['id'];?></th>
+                                            <td><?php echo $value['name'];?></td>
+                                            <td><?php echo $value['lastname'];?></td>
+                                            <td><?php echo $value['username'];?></td>
+                                            <td>
+                                                <a href="show.php?id=<?php echo $value['id'];?>" class="btn btn-info">Показать</a>
+                                                <a href="
+                                                updete_user.php?id=<?php echo $value['id'];?>" class="btn btn-warning">Изменить</a>
+                                                <a href="delete.php?id=<?php echo $value['id'];?>" class="btn btn-danger">Удалить</a>
+                                            </td>
+                                        </tr>  
+                                        <?php } ?>
+                                        
+                                        <!-- <tr>
                                             <th scope="row">1</th>
                                             <td>Mark</td>
                                             <td>Otto</td>
@@ -91,10 +112,12 @@
                                                 <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
                                                 <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
+
                                 </table>
                             </div>
+                            <a href="update_form.php?id=<?php echo $value['id'];?>" class="btn btn-warning">Добавить</a>
                         </div>
                     </div>
                 </div>
