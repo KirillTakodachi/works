@@ -1,12 +1,12 @@
 <?php
 	session_start();
-	$name = "$_POST['Kirill']";
-	$lastname = "$_POST['Manchuruk']";
-	$username = "$_POST['KirikTako']";
-	
-	$sql = "INSERT INTO my_table(name, lastname, username) VALUES (:name, :lastname, :username)";
-	$statement = $pdo->prepare($sql);
-	$statement->execute(['name'=>$name, 'lastname'=>$lastname, 'username'=>$username]);
+	$name = 'Kirill';
+	$surname = 'Manchuruk';
+	$username = 'KirikTako';
 	var_dump($session_start);die();
+	$sql = "INSERT INTO my_base(name, surname, username) VALUES (:name, :surname, :username)";
+	$statement = $pdo->prepare($sql);
+	$statement->execute(['name'=>$name, 'surname'=>$surname, 'username'=>$username]);
+	
 	header("Location: /KMworks.loc/20TaskPhp/9_task");
 ?>
