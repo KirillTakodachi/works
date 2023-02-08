@@ -26,7 +26,7 @@
     $statement = $pdo->prepare($sql);
     $statement->execute([
         "email"=>$email,
-        "password"=>$password,
+        "password"=>password_hash($password, PASSWORD_DEFAULT),
     ]);
 
 ?>

@@ -36,7 +36,7 @@ function get_user_by_value($value){
 //$key = что добовляем
 //$value = куда добовляем (обязательно прописывать в виде :(значение).)
 function add_user($name,$key,$value){
-    $sql = "INSERT INTO $name ($key) VALUES ($value)";
+    "INSERT INTO base_user ($key) VALUES ($value)";
 }
 //    add_user("base_user","email, password",":email, :password");
 
