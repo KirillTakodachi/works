@@ -12,15 +12,15 @@ function connect_to_db(){
 //выбор того что хотим получить
 //$name_db = имя таблицы в БД
 //$value = что хотим получить
-function choice(){
-    "SELECT * FROM base_user WHERE email=:email";
+function choice($name){
+    "SELECT * FROM base_user WHERE $name=:$name";
 }
 
 
 
 //получение эл. аддреса из бд(так же можно получить и другие значения)
 //$value = что хотим получить
-//$var = название переменной к которой будем одращаться за данными
+//$user = название переменной к которой будем одращаться за данными
 function get_user_by_value($value){
     $pdo = connect_to_db();
     $sql = choice();
@@ -35,7 +35,7 @@ function get_user_by_value($value){
 //$name = название таблицы
 //$key = что добовляем
 //$value = куда добовляем (обязательно прописывать в виде :(значение).)
-function add_user($name,$key,$value){
+function add_user($key,$value){
     "INSERT INTO base_user ($key) VALUES ($value)";
 }
 //    add_user("base_user","email, password",":email, :password");
@@ -47,7 +47,7 @@ function add_user($name,$key,$value){
 function flesh_sub($name,$sub){
     $_SESSION["$name"] = "$sub";
 }
-flesh_sub("danger","Этот аддрес уже занят.");
+//flesh_sub("danger","Этот аддрес уже занят.");
 
 
 
