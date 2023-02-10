@@ -41,17 +41,13 @@ $pdo = new PDO('mysql:host=localhost;dbname=my_table','root','');
                     <div class="panel-content">
                         <div class="panel-content">
                             <div class="form-group">
-
-
-                                <form action="img_dowload.php" method="post">
+                                <form action="img_dowload.php" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Image</label>
-                                        <input type="file" id="simpleinput" class="form-control">
+                                        <input type="file" name="file" id="simpleinput" class="form-control">
                                     </div>
-                                    <button class="btn btn-success mt-3">Submit</button>
+                                    <button class="btn btn-success mt-3" type="submit">Submit</button>
                                 </form>
-
-
                             </div>
                         </div>
                     </div>
@@ -74,18 +70,23 @@ $pdo = new PDO('mysql:host=localhost;dbname=my_table','root','');
                     <div class="panel-content">
                         <div class="panel-content image-gallery">
                             <div class="row">
-                                <?php  ?>
+                                <?php
+                                $sql = "SELECT * FROM img_base";
+                                $statement = $pdo->prepare($sql);
+                                $statement->execute();
+                                $user = $statement->fetch(PDO::FETCH_ASSOC); ?>
                                 <div class="col-md-3 image">
-                                    <img src="img/demo/gallery/1.jpg">
+                                    <?php echo $user["name"];  ?>
+<!--                                    <img src="img/demo/gallery/1.jpg">-->
                                 </div>
-
-                                <div class="col-md-3 image">
-                                    <img src="img/demo/gallery/2.jpg">
-                                </div>
-
-                                <div class="col-md-3 image">
-                                    <img src="img/demo/gallery/3.jpg">
-                                </div>
+<!---->
+<!--                                <div class="col-md-3 image">-->
+<!--                                    <img src="img/demo/gallery/2.jpg">-->
+<!--                                </div>-->
+<!---->
+<!--                                <div class="col-md-3 image">-->
+<!--                                    <img src="img/demo/gallery/3.jpg">-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
