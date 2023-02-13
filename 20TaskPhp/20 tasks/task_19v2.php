@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
         <meta charset="utf-8">
@@ -37,10 +40,10 @@
                             <div class="panel-content">
                                 <div class="panel-content">
                                     <div class="form-group">
-                                        <form action="">
+                                        <form action="upload.v2.php" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
-                                            <input type="file" id="simpleinput" class="form-control">
+                                            <input type="file" name="file[]" id="simpleinput" class="form-control" multiple>
                                             </div>
                                             <button class="btn btn-success mt-3">Submit</button>
                                         </form>
