@@ -2,7 +2,7 @@
 
 include "function.php";
 $db = include "DataBase/start.php";
-$posts = $db->getAllPosts();
+$posts = $db->getAll("posts");
 //dd($posts);
 
 include "index_view.php";
