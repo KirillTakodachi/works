@@ -9,5 +9,5 @@ $db->create('posts',
         "title" => $_POST['title'],
     ]
 );
-header("Location: index.php");
+header("Location: index_view.php");
 

@@ -1,6 +1,5 @@
 <?php
 
-
 class QueryBuilder{
     protected $pdo;
 
@@ -34,17 +33,27 @@ class QueryBuilder{
 
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
-    public function update($table, $data, $id){
+    public function update($table, $data, $id) {
+        var_dump($id);
         $keys = array_keys($data);
-        $string = "";
+        $string = '';
         foreach ($keys as $key) {
-            $string .= $key . "=:" . $key . ",";
+            $string .= $key . '=:' . $key . ',';
         }
-        $keys =rtrim($string);
-        $data['id'] = $id;
+        $keys = rtrim($string, ",");
+        $data["id"] = $id;
         $sql = "UPDATE {$table} SET {$keys} WHERE id=:id";
         $statement = $this->pdo->prepare($sql);
-        $statement->execute(["id" => $id]);
+        $statement->execute($data);
+        return $statement;
+    }
+    public function delete($table, $id) {
+        $sql = "DELETE FROM {$table} WHERE id=:id";
+        $statement = $this->pdo->prepare($sql);;
+        $statement->execute([
+            "id"=>$id
+        ]);
+        return $statement;
     }
 }
 

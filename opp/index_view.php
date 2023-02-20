@@ -1,3 +1,8 @@
+<?php
+include_once "function.php";
+$db = include "DataBase/start.php";
+$posts = $db->getAll("posts");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,7 +60,7 @@
                             <td><a href="show.php?id=<?php echo $post["id"]?>"><?php echo $post["title"]; ?></a></td>
                             <td>
                                 <a href="updateForm.php?id=<?php echo $post["id"]?>" class="btn btn-warning">Изменить</a>
-                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
+                                <a href="delete.php?id=<?php echo $post["id"]?>" class="btn btn-danger" onclick="return  confirm('Эта запись будет безвозвратно удалена')">Удалить</a>
                             </td>
                         </tr>
                     <?php } ?>

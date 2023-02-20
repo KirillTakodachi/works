@@ -1,3 +1,11 @@
+<?php
+include "function.php";
+$db = include "DataBase/start.php";
+$id = $_GET["id"];
+$post = $db->getOne("posts", $id);
+var_dump($id);
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -11,7 +19,7 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <form action="edit.php" method="POST">
+            <form action="edit.php?id=<?php echo $_GET["id"];?>" method="POST">
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" name="title" class="form-control">
