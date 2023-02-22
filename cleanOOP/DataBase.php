@@ -18,12 +18,12 @@ class DataBase{
     }
 
     public function query($sql){
-     $this->error;
+     $this->error = false;
      $this->query = $this->pdo->prepare($sql);
      if (!$this->query->execute()){
          $this->error = true;
      }else{
-         $this->result = $this->query->fetchAll(PDO::FETCH_OBJ);
+         $this->result = $this->query->fetchAll(PDO::FETCH_ASSOC);
          $this->count = $this->query->rowCount();
      }
      return $this;
@@ -37,7 +37,7 @@ class DataBase{
     public function count(){
      return $this->count;
     }
-    public function result(){
+    public function results(){
      return $this->result;
     }
 }
