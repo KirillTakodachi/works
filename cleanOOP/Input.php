@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 class Input
 {
     public static function exists($type = 'post') {

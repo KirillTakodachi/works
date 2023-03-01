@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 class Session
 {
     public static function put($name, $value) {

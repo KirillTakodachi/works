@@ -1,12 +1,11 @@
 <?php
-session_start();
 
 class Config
 {
-    public static function get($path = null) {
+    public static function get($path = null)
+    {
         if ($path) {
             $config = $GLOBALS['config'];
-
             $path = explode('.', $path);
 
             foreach ($path as $item) {
@@ -19,4 +18,3 @@ class Config
         return false;
     }
 }
-

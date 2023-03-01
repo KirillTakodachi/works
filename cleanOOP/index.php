@@ -36,7 +36,7 @@ $GLOBALS["config"] = [
 ];
 
 
-//$users = Database::getInstance()->get('users', ['username', '=', 'Marlin']);
+$users = Database::getInstance()->get('users', ['username', '=', 'Marlin']);
 //Database::getInstance()->delete('users', ['username', '=', 'name2']);
 
 
@@ -73,7 +73,7 @@ if (Input::exists()) {
         //	var_dump($validation->errors());
 
         if ($validation->passed()) {
-            Session::flash('success', 'register success');
+            Session::flash('success', 'register seccess');
             header('Location: test.php');
         } else {
             foreach ($validation->errors() as $error) {
@@ -100,7 +100,7 @@ if (Input::exists()) {
         <label for="password_again">Password again</label>
         <input type="text" name="password_again">
     </div>
-    <input type="hidden" name="token" value="<?php echo Token::generate() ?>">
+    <input type="hidden1" name="token" value="<?php echo Token::generate() ?>">
 
     <div class="field">
         <button type="submit">Submit</button>

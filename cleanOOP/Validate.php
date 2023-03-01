@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 class Validate
 {
     private $passed = false, $errors = [], $db = null;
@@ -12,6 +12,7 @@ class Validate
         foreach ($items as $item => $rules) {
             foreach ($rules as $rule => $rule_value) {
                 $value = $source[$item];
+
                 if ($rule == 'required' && empty($value)) {
                     $this->addError("{$item} is required");
                 } elseif (!empty($value)) {
