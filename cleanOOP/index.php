@@ -6,6 +6,7 @@ include_once "Validate.php";
 include_once "Input.php";
 include_once "Token.php";
 include_once "Session.php";
+include_once "User.php";
 
 //Database::getInstance()->insert('users', [
 //	'username' => 'Marlin',
@@ -73,7 +74,16 @@ if (Input::exists()) {
         //	var_dump($validation->errors());
 
         if ($validation->passed()) {
-            Session::flash('success', 'register seccess');
+            //DatBase
+            $user = new User;
+
+            $user->create([
+                    'username' => Input::get('username'),
+                    'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT),
+            ]);
+
+
+            Session::flash('success', 'register success');
             header('Location: test.php');
         } else {
             foreach ($validation->errors() as $error) {
