@@ -7,6 +7,7 @@ include_once "Input.php";
 include_once "Token.php";
 include_once "Session.php";
 include_once "User.php";
+include_once "Redirect.php";
 
 //Database::getInstance()->insert('users', [
 //	'username' => 'Marlin',
@@ -84,7 +85,10 @@ if (Input::exists()) {
 
 
             Session::flash('success', 'register success');
-            header('Location: test.php');
+//            header('Location: test.php');
+//            Redirect::to('test.php');
+            Redirect::to(404);
+
         } else {
             foreach ($validation->errors() as $error) {
                 echo $error . '<br>';
@@ -98,6 +102,7 @@ if (Input::exists()) {
 
 
 <form action="" method="post">
+    <?php //echo Session::flash('success'); ?>
     <div class="field">
         <label for="username">Username</label>
         <input type="text" name="username" value="<?php echo Input::get('username'); ?>">
