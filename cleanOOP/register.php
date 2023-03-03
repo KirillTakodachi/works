@@ -2,30 +2,6 @@
 session_start();
 require_once "init.php";
 
-//Database::getInstance()->insert('users', [
-//	'username' => 'Marlin',
-//	'password' => 'pass',
-//]);
-//Database::getInstance()->update('users', 5, [
-//	'username' => 'Marlin2',
-//	'password' => 'pass2',
-//]);
-
-
-$users = Database::getInstance()->get('users', ['username', '=', 'Marlin']);
-//Database::getInstance()->delete('users', ['username', '=', 'name2']);
-
-
-//if ($users->error()) {
-//	echo "This Error";
-//} else {
-//	foreach ($users->result() as $user) {
-//		echo $user["id"] . ". " . $user["username"] . "<br>";
-//		//		echo $user . "<br>";
-//	}
-//}
-
-
 if (Input::exists()) {
     if (Token::check(Input::get('token'))) {
         $validate = new Validate();
@@ -51,7 +27,6 @@ if (Input::exists()) {
             ],
         ]);
 
-        //	var_dump($validation->errors());
 
         if ($validation->passed()) {
             //DatBase
@@ -82,7 +57,7 @@ if (Input::exists()) {
 
 
 <form action="" method="post">
-    <?php //echo Session::flash('success'); ?>
+    <?php echo Session::flash('success'); ?>
     <div class="field">
         <label for="username">Username</label>
         <input type="text" name="username" value="<?php echo Input::get('username'); ?>">
