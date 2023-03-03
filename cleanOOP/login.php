@@ -2,30 +2,6 @@
 session_start();
 require "init.php";
 
-//Database::getInstance()->insert('users', [
-//	'username' => 'Marlin',
-//	'password' => 'pass',
-//]);
-//Database::getInstance()->update('users', 5, [
-//	'username' => 'Marlin2',
-//	'password' => 'pass2',
-//]);
-
-
-//$users = Database::getInstance()->get('users', ['username', '=', 'Marlin']);
-//Database::getInstance()->delete('users', ['username', '=', 'name2']);
-
-
-//if ($users->error()) {
-//	echo "This Error";
-//} else {
-//	foreach ($users->result() as $user) {
-//		echo $user["id"] . ". " . $user["username"] . "<br>";
-//		//		echo $user . "<br>";
-//	}
-//}
-
-
 if (Input::exists()) {
     if (Token::check(Input::get('token'))) {
 
@@ -42,7 +18,9 @@ if (Input::exists()) {
             $user = new User;
 
             $login = $user->login(Input::get('email'), Input::get('password'));
-
+echo "<pre>";
+            var_dump($login);
+echo "</pre>";
             if ($login){
                 echo 'login successful';
             }else{
@@ -58,7 +36,6 @@ if (Input::exists()) {
 
 ?>
 
-
 <form action="" method="post">
     <div class="field">
         <label for="email">Email</label>
@@ -66,9 +43,9 @@ if (Input::exists()) {
     </div>
     <div class="field">
         <label for="password">Password</label>
-        <input type="text" name="password">
+        <input type="text" name="password" value="qwer">
     </div>
-    <input type="" name="token" value="<?php echo Token::generate() ?>">
+    <input type="text" name="token" value="<?php echo Token::generate() ?>">
 
     <div class="field">
         <button type="submit">Submit</button>

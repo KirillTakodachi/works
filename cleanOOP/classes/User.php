@@ -38,9 +38,9 @@ class User{
 
     public function find($value = null){
         if (is_numeric($value)){
-            $this->data = $this->db->get('user', ['id', '=', $value]);
+            $this->data = $this->db->get('user', ['id', '=', $value])->first();
         }else{
-            $this->data = $this->db->get('users', ['email', '=', $value]);
+            $this->data = $this->db->get('users', ['email', '=', $value])->first();
         }
         if ($this->data){
             return true;
