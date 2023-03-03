@@ -24,8 +24,9 @@ class User{
 
     public function login($email = null, $password = null){
         if ($email){
-//            $user = $this->db->get('users', ['email', '=', $email])->first();
             $user = $this->find($email);
+            return $email;
+//            var_dump($user);
             if ($user){
                 if (password_verify($password, $this->data()->password)){
                 Session::put($this->session_name, $this->data()->id);
