@@ -1,13 +1,6 @@
 <?php
 session_start();
-include_once "classes/Config.php";
-include_once "classes/DataBase.php";
-include_once "classes/Validate.php";
-include_once "classes/Input.php";
-include_once "classes/Token.php";
-include_once "classes/Session.php";
-include_once "classes/User.php";
-include_once "classes/Redirect.php";
+require_once "init.php";
 
 //Database::getInstance()->insert('users', [
 //	'username' => 'Marlin',
@@ -17,25 +10,6 @@ include_once "classes/Redirect.php";
 //	'username' => 'Marlin2',
 //	'password' => 'pass2',
 //]);
-
-$GLOBALS["config"] = [
-    'mysql'   => [
-        "host"      => "localhost",
-        "username"  => "root",
-        "password"  => "",
-        "database"  => "marlin_clean_oop",
-        "something" => [
-            "no" => [
-                "foo" => [
-                    "bar" => "baz"
-                ]
-            ]
-        ]
-    ],
-    'session' => [
-        'token_name' => 'token',
-    ]
-];
 
 
 $users = Database::getInstance()->get('users', ['username', '=', 'Marlin']);
