@@ -23,6 +23,7 @@ echo "<pre>";
 echo "</pre>";
             if ($login){
                 echo 'login successful';
+                Redirect::to('index.php');
             }else{
                 echo 'login failed';
             }
@@ -43,7 +44,7 @@ echo "</pre>";
     </div>
     <div class="field">
         <label for="password">Password</label>
-        <input type="text" name="password" value="qwer">
+        <input type="text" name="password">
     </div>
     <input type="text" name="token" value="<?php echo Token::generate() ?>">
 

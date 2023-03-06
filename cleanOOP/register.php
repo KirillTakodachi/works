@@ -43,14 +43,13 @@ if (Input::exists()) {
 //            header('Location: test.php');
 //            Redirect::to('test.php');
 //            Redirect::to(404);
-
+            Redirect::to('login.php');
         } else {
             foreach ($validation->errors() as $error) {
                 echo $error . '<br>';
             }
         }
     }
-
 }
 
 ?>

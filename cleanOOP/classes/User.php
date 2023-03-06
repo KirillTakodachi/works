@@ -25,8 +25,6 @@ class User{
     public function login($email = null, $password = null){
         if ($email){
             $user = $this->find($email);
-            return $email;
-//            var_dump($user);
             if ($user){
                 if (password_verify($password, $this->data()->password)){
                 Session::put($this->session_name, $this->data()->id);
@@ -39,7 +37,7 @@ class User{
 
     public function find($value = null){
         if (is_numeric($value)){
-            $this->data = $this->db->get('user', ['id', '=', $value])->first();
+            $this->data = $this->db->get('users', ['id', '=', $value])->first();
         }else{
             $this->data = $this->db->get('users', ['email', '=', $value])->first();
         }
@@ -51,6 +49,14 @@ class User{
 
     public function data(){
         return $this->data;
+    }
+
+    public function isLoggedIn(){
+        return $this->isLoggedIn;
+    }
+
+    public function logout(){
+        Session::delete($this->session_name);
     }
 
 }
