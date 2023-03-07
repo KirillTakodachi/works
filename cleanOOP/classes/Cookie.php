@@ -13,6 +13,7 @@ public static function exists($name){
         if (setcookie($name, $value, time() + $expiry, '/')){
             return true;
         }
+        return false;
     }
 
     public static function  delete($name){

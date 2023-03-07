@@ -15,9 +15,11 @@ $user = new User();
 //Redirect::to("register.php");
 if ($user->isLoggedIn()) {
     echo "Привет " . $user->data()->username;
-    echo '<a href="logout.php">Выйти</a>';
+    echo '<p><a href="update.php">Изменить профиль</a></p>';
+    echo '<p><a href="logout.php">Выйти</a></p>'; //<p></p>
+
 } else {
-    echo "<a href='login.php'>login</a> or <a href='register.php'>register</a><br>";
+    echo "<p><a href='login.php'>войти</a> или <a href='register.php'>Зарегестрироваться</a><br></p>";
 }
 ?>
 
