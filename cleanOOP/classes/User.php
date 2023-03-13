@@ -95,4 +95,24 @@ class User{
         }
         $this->db->update('users', $id, $fields);
     }
+
+    public function hasPermissions($key = null) {
+        if ($key){
+
+            $group = $this->db->get('user_groups', ['id', '=', $this->data()->group_id]);
+
+            if ($group->count()){
+                $permissions = $group->first()->permissions;
+                $permissions = json_decode($permissions, true);
+
+                if ($permissions[$key]){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+
+
 }
