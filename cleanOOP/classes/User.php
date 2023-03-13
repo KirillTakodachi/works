@@ -93,6 +93,6 @@ class User{
         if (!$id && $this->isLoggedIn()){
             $id = $this->data()->id;
         }
-        $this->db->update('user', $id, $fields);
+        $this->db->update('users', $id, $fields);
     }
 }

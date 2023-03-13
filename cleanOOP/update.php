@@ -13,12 +13,13 @@ $validate->check($_POST, [
     ]
 ]);
 
+
 if (Input::exists()){
     if (Token::check(Input::get('token'))){
         if ($validate->passed()){
             $user->update([
                 'username' => Input::get('username')]);
-            Redirect::to('update.php');
+            Redirect::to('index.php');
         }else{
             foreach ($validate->errors() as $error) {
                 echo $error . '<br>';
@@ -26,7 +27,6 @@ if (Input::exists()){
         }
     }
 }
-
 ?>
 
 <form action="" method="post">
@@ -39,5 +39,5 @@ if (Input::exists()){
         <button type="submit">Submit</button>
     </div>
 
-    <input type="hidden" name="token" value="<?php echo Token::generate();?>">
+    <input type="hidden2" name="token" value="<?php echo Token::generate();?>">
 </form>

@@ -14,8 +14,11 @@ $user = new User();
 //header("Location: register.php");
 //Redirect::to("register.php");
 if ($user->isLoggedIn()) {
+    echo Session::flash('success');
+    echo '<br>';
     echo "Привет " . $user->data()->username;
     echo '<p><a href="update.php">Изменить профиль</a></p>';
+    echo '<p><a href="changepassword.php">Изменить пароль</a></p>';
     echo '<p><a href="logout.php">Выйти</a></p>'; //<p></p>
 
 } else {
