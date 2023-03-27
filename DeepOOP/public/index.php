@@ -7,6 +7,7 @@ if( !session_id() ) {
 
 require_once "../vendor/autoload.php";
 
+
 if (true){
     \Tamtamchik\SimpleFlash\flash()->message('hot!');
 }
