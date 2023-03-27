@@ -4,9 +4,7 @@ use App\QueryBuilder;
 if( !session_id() ) {
     session_start();
 }
-
 require_once "../vendor/autoload.php";
-
 
 if (true){
     \Tamtamchik\SimpleFlash\flash()->message('hot!');
