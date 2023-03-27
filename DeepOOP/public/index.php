@@ -1,11 +1,18 @@
 <?php
-// Start a Session
+use App\QueryBuilder;
+
 if( !session_id() ) {
     session_start();
 }
 
 require_once "../vendor/autoload.php";
-//use App\QueryBuilder;
+
+if (true){
+    \Tamtamchik\SimpleFlash\flash()->message('hot!');
+}
+
+//echo \Tamtamchik\SimpleFlash\flash()->display();
+
 //$db = new QueryBuilder();
 //
 //
@@ -25,9 +32,9 @@ require_once "../vendor/autoload.php";
 //}
 //exit;
 
-\Tamtamchik\SimpleFlash\flash()->message("test");
+//\Tamtamchik\SimpleFlash\flash()->message("test");
 
-$templates = new League\Plates\Engine('../app/view');
+//$templates = new League\Plates\Engine('../app/view');
 
 //echo $templates->render('homepage', ['name' => 'Among']);
 
